@@ -152,7 +152,15 @@ dev_dependencies:
 
 <!-- Add your screenshots here -->
 ```
-[Main Screen]    [Expanded View]    [Image Gallery]
+Main Screen
+<img width="1080" height="2424" alt="Screenshot_1770444929" src="https://github.com/user-attachments/assets/7d72615b-b114-41e3-8b9a-43c42bba177c" />
+
+Expanded View
+<img width="1080" height="2424" alt="Screenshot_1770444938" src="https://github.com/user-attachments/assets/8b279ae1-932f-4556-adaf-88331e7138d2" />
+
+Image Gallery
+<img width="1080" height="2424" alt="Screenshot_1770444946" src="https://github.com/user-attachments/assets/395cb9c6-a5d7-4ab5-abe8-71bc6d63e732" />
+
 ```
 
 ## 🤝 Contributing
