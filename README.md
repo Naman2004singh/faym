@@ -157,6 +157,9 @@ dev_dependencies:
   <img src="https://github.com/user-attachments/assets/1ae25005-654f-49f7-97c9-32e2f68eac11" width="250"/>
 </p>
 
+## 📦 APK Download
+
+👉 [Click here to download the APK](https://drive.google.com/file/d/1QJPUeWeqdAhzx9JQsdMxC8A68aahl8am/view?usp=sharing)
 
 
 ## 🤝 Contributing
