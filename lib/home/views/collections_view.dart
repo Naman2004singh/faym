@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/collection_controller.dart';
 import '../widgets/collection_card.dart';
+import '../../utils/constants/app_colors.dart';
 
 class CollectionsView extends StatelessWidget {
   const CollectionsView({super.key});
@@ -13,18 +14,40 @@ class CollectionsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Collections'),
-        elevation: 2,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.grid_view_rounded),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Obx(() {
         if (controller.collections.isEmpty) {
-          return const Center(
-            child: Text('No collections available'),
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.collections_outlined,
+                  size: 80,
+                  color: AppColors.textSecondary.withOpacity(0.5),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  'No collections available',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+              ],
+            ),
           );
         }
 
         return ListView.builder(
           itemCount: controller.collections.length,
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
           itemBuilder: (context, index) {
             final collection = controller.collections[index];
             return CollectionCard(collection: collection);
