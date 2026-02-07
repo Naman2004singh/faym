@@ -148,20 +148,16 @@ dev_dependencies:
 | Text Primary | `#2D3142` | Main text |
 | Text Secondary | `#7E8A9E` | Subtitles, descriptions |
 
-## 📱 Screenshots
+## 📸 Screenshots
 
-<!-- Add your screenshots here -->
-```
-Main Screen
-<img width="1080" height="2424" alt="Screenshot_1770444929" src="https://github.com/user-attachments/assets/7d72615b-b114-41e3-8b9a-43c42bba177c" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7d72615b-b114-41e3-8b9a-43c42bba177c" width="250"/>
+  <img src="https://github.com/user-attachments/assets/8b279ae1-932f-4556-adaf-88331e7138d2" width="250"/>
+  <img src="https://github.com/user-attachments/assets/395cb9c6-a5d7-4ab5-abe8-71bc6d63e732" width="250"/>
+  <img src="https://github.com/user-attachments/assets/1ae25005-654f-49f7-97c9-32e2f68eac11" width="250"/>
+</p>
 
-Expanded View
-<img width="1080" height="2424" alt="Screenshot_1770444938" src="https://github.com/user-attachments/assets/8b279ae1-932f-4556-adaf-88331e7138d2" />
 
-Image Gallery
-<img width="1080" height="2424" alt="Screenshot_1770444946" src="https://github.com/user-attachments/assets/395cb9c6-a5d7-4ab5-abe8-71bc6d63e732" />
-
-```
 
 ## 🤝 Contributing
 
@@ -219,13 +215,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - GetX community for excellent state management
 - Material Design team for design guidelines
 - Unsplash/Picsum for placeholder images
-
-## 📞 Support
-
-If you like this project, please give it a ⭐️ on GitHub!
-
-For issues and feature requests, please use the [Issues](https://github.com/Naman2004singh/faym/issues) section.
-
----
-
-Made with ❤️ using Flutter
