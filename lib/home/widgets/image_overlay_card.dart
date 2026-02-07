@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utils/constants/app_constants.dart';
+import '../../utils/constants/app_colors.dart';
 
 class ImageOverlayCard extends StatelessWidget {
   final int remainingCount;
@@ -23,26 +24,59 @@ class ImageOverlayCard extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Colors.black87, Colors.black54],
+            colors: [
+              AppColors.primary,
+              AppColors.primaryDark,
+            ],
           ),
           borderRadius: BorderRadius.circular(AppConstants.imageBorderRadius),
           boxShadow: [
             BoxShadow(
-              color: Colors.black26,
-              blurRadius: 4,
-              offset: const Offset(0, 2),
+              color: AppColors.primary.withOpacity(0.3),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
-        child: Center(
-          child: Text(
-            '+$remainingCount',
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: AppConstants.overlayFontSize,
-              fontWeight: FontWeight.bold,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(AppConstants.imageBorderRadius),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.2),
+                    width: 1.5,
+                  ),
+                ),
+              ),
             ),
-          ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '+$remainingCount',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: AppConstants.overlayFontSize,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: -0.5,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'more',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.9),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
