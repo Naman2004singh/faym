@@ -4,6 +4,7 @@ import '../models/collection_model.dart';
 import '../controllers/collection_controller.dart';
 import '../views/image_gallery_view.dart';
 import '../../utils/constants/app_constants.dart';
+import '../../utils/constants/app_colors.dart';
 import 'network_image_widget.dart';
 import 'image_overlay_card.dart';
 
@@ -60,23 +61,74 @@ class CollectionCard extends StatelessWidget {
     return InkWell(
       onTap: () => controller.toggleCollection(collection.id),
       borderRadius: BorderRadius.circular(AppConstants.cardBorderRadius),
-      child: Padding(
+      child: Container(
         padding: const EdgeInsets.all(AppConstants.cardPadding),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Colors.white,
+              Colors.grey.shade50,
+            ],
+          ),
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(AppConstants.cardBorderRadius),
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              collection.title,
-              style: const TextStyle(
-                fontSize: AppConstants.titleFontSize,
-                fontWeight: FontWeight.bold,
+            Expanded(
+              child: Row(
+                children: [
+                  Container(
+                    width: 4,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          AppColors.primary,
+                          AppColors.primaryLight,
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      collection.title,
+                      style: const TextStyle(
+                        fontSize: AppConstants.titleFontSize,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary,
+                        letterSpacing: -0.3,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Obx(() => AnimatedRotation(
-              duration: const Duration(milliseconds: AppConstants.animationDuration),
-              turns: controller.isExpanded(collection.id) ? 0.5 : 0,
-              child: const Icon(Icons.keyboard_arrow_down),
-            )),
+            Obx(() {
+              final isExpanded = controller.isExpanded(collection.id);
+              return Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: isExpanded ? AppColors.primary : Colors.grey.shade100,
+                  shape: BoxShape.circle,
+                ),
+                child: AnimatedRotation(
+                  duration: const Duration(milliseconds: AppConstants.animationDuration),
+                  turns: isExpanded ? 0.5 : 0,
+                  child: Icon(
+                    Icons.keyboard_arrow_down,
+                    color: isExpanded ? Colors.white : AppColors.textSecondary,
+                    size: 20,
+                  ),
+                ),
+              );
+            }),
           ],
         ),
       ),
@@ -101,8 +153,19 @@ class CollectionCard extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const Divider(),
-                  const SizedBox(height: 12),
+                  Container(
+                    height: 1,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.transparent,
+                          AppColors.divider,
+                          Colors.transparent,
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
                   _buildImageList(visibleImages, remainingCount),
                 ],
               ),
